@@ -1,5 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background: #16110E;
+  color: #F5F5F5;
+  height: 100dvh;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #F5F5F5;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: #075E54;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+  background: #C9A227;
+  color: #0D0A08;
+}
+
+header {
+  position: relative;
+  background: #0D0A08;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #C9A227;
+}
+
+header.active {
+  border: none;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.logo {
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.logo a {
+  color: #C9A227;
+}
+
+.hamburger {
+  width: 40px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.4s ease 0.1s, background 0.4s ease, opacity 0.2s ease-in;
+}
+
+h1 {
+  letter-spacing: 1px;
+}
+
+.menu {
+  padding: 15px 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  gap: 2rem;
+  font-size: 1.325rem;
+  font-weight: 500;
+  transition: opacity 0.1s ease, transform 0.1s ease-in-out 0.1s;
+}
+.menu .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.menu .nav-links :hover {
+  color: #C9A227;
+  scale: 1.125;
+}
+
+.hamburger.active .bar {
+  background: red;
+}
+.hamburger.active .bar1 {
+  transform: rotate(-45deg) translateY(10px);
+}
+.hamburger.active .bar2 {
+  opacity: 0;
+}
+.hamburger.active .bar3 {
+  transform: rotate(45deg) translateY(-8px);
+}
+
+.menu.active {
+  background: #0D0A08;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    opacity: 1;
+    flex-direction: row;
+    position: static;
+    visibility: visible;
+    padding: 0;
+    transform: translateY(0);
+    width: auto;
+  }
+  .menu .nav-links {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=style.css.map */
